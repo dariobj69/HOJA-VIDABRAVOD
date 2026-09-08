@@ -1,80 +1,41 @@
 <!doctype html>
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Hoja de vida profesional de Dario Bravo: estrategia, producto y liderazgo de equipos.">
-	<title>Dario Bravo | Estrategia & Producto</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-	<style>
-		:root { --ink:#17211d; --muted:#69766e; --paper:#f3f5ef; --line:#d9dfd7; --lime:#c7f36b; --forest:#17372c; --white:#fbfcf8; --mono:'DM Mono',monospace; --sans:'Manrope',sans-serif; }
-		* { box-sizing:border-box; }
-		html { scroll-behavior:smooth; }
-		body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); }
-		a { color:inherit; text-decoration:none; } button { font:inherit; }
-		.shell { width:min(1180px,calc(100% - 48px)); margin:0 auto; }
-		.eyebrow { color:var(--muted); font:500 11px var(--mono); letter-spacing:.12em; text-transform:uppercase; }
-		.site-header { padding:24px 0; border-bottom:1px solid var(--line); }
-		.nav { display:flex; align-items:center; justify-content:space-between; }
-		.brand { display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:-.04em; }
-		.brand-mark { display:grid; place-items:center; width:34px; height:34px; border-radius:50%; background:var(--lime); font-size:13px; }
-		.nav-links { display:flex; align-items:center; gap:30px; color:var(--muted); font-size:13px; }
-		.nav-links a { transition:color .2s ease; } .nav-links a:hover { color:var(--ink); }
-		.nav-cta { padding:11px 16px; border:1px solid var(--ink); border-radius:999px; color:var(--ink); font-weight:700; }
-		.menu-toggle { display:none; border:0; background:transparent; color:var(--ink); font-size:24px; cursor:pointer; }
-		.hero { min-height:630px; display:grid; grid-template-columns:1fr 380px; gap:10%; align-items:center; padding:88px 0 100px; }
-		.hero-copy { max-width:720px; } h1 { max-width:720px; margin:20px 0 25px; font-size:clamp(52px,7.2vw,96px); line-height:.98; letter-spacing:-.075em; font-weight:800; }
-		h1 em { color:#7eac2e; font-style:normal; } .hero-description { max-width:500px; margin:0 0 34px; color:var(--muted); font-size:17px; line-height:1.65; }
-		.hero-actions { display:flex; align-items:center; gap:20px; } .button { display:inline-flex; align-items:center; gap:10px; padding:14px 19px; border:1px solid var(--ink); border-radius:4px; font-weight:700; font-size:13px; transition:transform .2s ease,background .2s ease; }
-		.button:hover { transform:translateY(-2px); } .button-primary { background:var(--forest); color:var(--white); } .button-primary:hover { background:#265643; }
-		.button-plain { border-color:transparent; padding-left:0; } .button-plain span { color:#7eac2e; font-size:21px; line-height:0; }
-		.profile-panel { position:relative; min-height:375px; padding:24px; background:var(--forest); color:var(--white); overflow:hidden; }
-		.profile-panel::before { content:''; position:absolute; width:190px; height:190px; right:-65px; bottom:-52px; border:1px solid rgba(199,243,107,.6); border-radius:50%; }
-		.profile-panel::after { content:''; position:absolute; width:260px; height:260px; right:-100px; bottom:-100px; border:1px solid rgba(199,243,107,.25); border-radius:50%; }
-		.profile-top { display:flex; justify-content:space-between; align-items:flex-start; } .status { display:inline-flex; align-items:center; gap:7px; color:var(--lime); font:400 10px var(--mono); letter-spacing:.08em; text-transform:uppercase; }
-		.status::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--lime); } .profile-label { color:rgba(251,252,248,.58); font:400 10px var(--mono); }
-		.portrait { width:148px; height:148px; margin:66px 0 30px; border:7px solid rgba(199,243,107,.22); border-radius:50%; background:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=85') center/cover; }
-		.profile-panel h2 { margin:0; font-size:24px; letter-spacing:-.05em; } .profile-panel p { margin:7px 0 0; color:rgba(251,252,248,.6); font-size:13px; }
-		.section { padding:100px 0; border-top:1px solid var(--line); } .section-heading { display:grid; grid-template-columns:1fr 2fr; gap:30px; margin-bottom:56px; }
-		.section-heading h2 { max-width:650px; margin:-8px 0 0; font-size:clamp(32px,4vw,54px); line-height:1.02; letter-spacing:-.07em; }
-		.about-grid { display:grid; grid-template-columns:1fr 2fr; gap:30px; } .about-copy { margin-left:calc(33.333% + 15px); max-width:590px; color:var(--muted); font-size:17px; line-height:1.75; }
-		.about-copy strong { color:var(--ink); } .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin:52px 0 0 calc(33.333% + 15px); background:var(--line); border:1px solid var(--line); }
-		.metric { padding:22px; background:var(--paper); } .metric strong { display:block; font-size:32px; letter-spacing:-.06em; } .metric span { display:block; margin-top:7px; color:var(--muted); font:11px var(--mono); text-transform:uppercase; }
-		.experience-list { border-top:1px solid var(--line); } .experience-item { display:grid; grid-template-columns:1fr 2fr 1fr; gap:30px; padding:26px 0; border-bottom:1px solid var(--line); }
-		.experience-date { color:var(--muted); font:11px var(--mono); } .experience-role { font-size:19px; font-weight:800; letter-spacing:-.04em; } .experience-company { margin-top:6px; color:#7eac2e; font-size:13px; font-weight:700; } .experience-detail { color:var(--muted); font-size:13px; line-height:1.6; }
-		.skills-wrap { display:grid; grid-template-columns:1fr 2fr; gap:30px; } .skills-list { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
-		.skill { display:flex; justify-content:space-between; align-items:center; padding:20px; background:var(--paper); font-size:14px; font-weight:700; } .skill span { color:#7eac2e; font:11px var(--mono); }
-		.contact { display:grid; grid-template-columns:1fr 2fr; gap:30px; align-items:end; padding:100px 0 115px; } .contact h2 { margin:0; font-size:clamp(42px,6vw,78px); line-height:.95; letter-spacing:-.08em; }
-		.contact-copy { display:flex; align-items:end; justify-content:space-between; gap:30px; } .contact-copy p { max-width:330px; margin:0; color:var(--muted); font-size:15px; line-height:1.65; }
-		.email-link { color:var(--forest); font-size:14px; font-weight:800; border-bottom:2px solid var(--lime); padding-bottom:4px; white-space:nowrap; } footer { padding:20px 0; border-top:1px solid var(--line); color:var(--muted); font:10px var(--mono); text-transform:uppercase; }
-		.footer-inner { display:flex; justify-content:space-between; } .reveal { animation:rise .7s ease both; } @keyframes rise { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
-		@media (max-width:760px) {
-			.shell { width:min(100% - 34px,560px); } .site-header { padding:17px 0; } .menu-toggle { display:block; }
-			.nav-links { display:none; position:absolute; top:67px; left:17px; right:17px; z-index:3; padding:16px; background:var(--white); border:1px solid var(--line); box-shadow:0 10px 30px rgba(23,33,29,.08); }
-			.nav-links.is-open { display:grid; gap:18px; } .nav-cta { display:none; } .hero { min-height:auto; grid-template-columns:1fr; gap:55px; padding:74px 0 80px; } h1 { font-size:clamp(50px,17vw,78px); }
-			.profile-panel { min-height:340px; } .portrait { margin-top:55px; } .section { padding:75px 0; } .section-heading,.about-grid,.skills-wrap,.contact { grid-template-columns:1fr; gap:22px; }
-			.section-heading { margin-bottom:36px; } .about-copy,.metrics { margin-left:0; } .metrics { margin-top:35px; } .experience-item { grid-template-columns:1fr; gap:10px; padding:22px 0; }
-			.experience-detail { padding-top:2px; } .skills-list { grid-template-columns:1fr; } .contact-copy { display:grid; gap:28px; align-items:start; } .contact { padding-bottom:80px; } .footer-inner { gap:15px; flex-direction:column; }
-		}
-	</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hoja de vida digital de Dario Wladimir Bravo Jimbo, ubicado en La Maná, Ecuador.">
+  <meta name="author" content="Dario Wladimir Bravo Jimbo">
+  <meta property="og:title" content="Dario Wladimir Bravo Jimbo | Hoja de Vida">
+  <meta property="og:description" content="Conoce el perfil profesional y los datos de contacto de Dario Wladimir Bravo Jimbo.">
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="es_EC">
+  <title>Dario Wladimir Bravo Jimbo | Hoja de Vida</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-	<header class="site-header"><nav class="shell nav" aria-label="Navegación principal"><a class="brand" href="#inicio"><span class="brand-mark">DB</span> Dario Bravo</a><div class="nav-links" id="nav-links"><a href="#perfil">Perfil</a><a href="#experiencia">Experiencia</a><a href="#habilidades">Habilidades</a><a href="#contacto">Contacto</a></div><a class="nav-cta" href="#contacto">Hablemos <span aria-hidden="true">↗</span></a><button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="nav-links" aria-expanded="false">☰</button></nav></header>
-	<main id="inicio">
-		<section class="shell hero"><div class="hero-copy reveal"><div class="eyebrow">Hoja de vida · Bogotá / Remoto</div><h1>Ideas claras.<br><em>Resultados</em> reales.</h1><p class="hero-description">Soy Dario Bravo, estratega de producto y líder de equipos. Convierto problemas complejos en experiencias digitales simples, útiles y memorables.</p><div class="hero-actions"><a class="button button-primary" href="#experiencia">Conoce mi recorrido <span aria-hidden="true">↓</span></a><a class="button button-plain" href="mailto:hola@dariobravo.co">Escríbeme <span aria-hidden="true">↗</span></a></div></div><aside class="profile-panel reveal" aria-label="Perfil de Dario Bravo"><div class="profile-top"><span class="status">Disponible para proyectos</span><span class="profile-label">01 / 04</span></div><div class="portrait" role="img" aria-label="Retrato de Dario Bravo"></div><h2>Dario Bravo</h2><p>Product strategist · Diseñador de experiencias</p></aside></section>
-		<section class="section" id="perfil"><div class="shell"><div class="section-heading"><div class="eyebrow">01 — Perfil</div><h2>Diseño el puente entre las personas y el negocio.</h2></div><div class="about-grid"><div></div><div class="about-copy">Durante los últimos <strong>8 años</strong> he trabajado junto a equipos de tecnología, marketing y dirección para llevar productos de la intuición a la realidad. Mi enfoque combina pensamiento estratégico, sensibilidad por el detalle y una obsesión saludable por medir lo que importa.</div></div><div class="metrics"><div class="metric"><strong>8+</strong><span>Años de experiencia</span></div><div class="metric"><strong>24</strong><span>Productos lanzados</span></div><div class="metric"><strong>12</strong><span>Equipos acompañados</span></div></div></div></section>
-		<section class="section" id="experiencia"><div class="shell"><div class="section-heading"><div class="eyebrow">02 — Experiencia</div><h2>Una trayectoria construida haciendo.</h2></div><div class="experience-list"><article class="experience-item"><div class="experience-date">2022 — HOY</div><div><div class="experience-role">Head of Product</div><div class="experience-company">Nómada Studio</div></div><div class="experience-detail">Dirección de producto, visión y cultura de experimentación para una plataforma de servicios.</div></article><article class="experience-item"><div class="experience-date">2019 — 2022</div><div><div class="experience-role">Product Lead</div><div class="experience-company">Cívica Digital</div></div><div class="experience-detail">Liderazgo de equipos multidisciplinarios y lanzamiento de productos B2B en cinco mercados.</div></article><article class="experience-item"><div class="experience-date">2016 — 2019</div><div><div class="experience-role">UX Strategist</div><div class="experience-company">Taller Norte</div></div><div class="experience-detail">Investigación, diseño de servicios y definición de experiencias para marcas en transformación.</div></article></div></div></section>
-		<section class="section" id="habilidades"><div class="shell"><div class="section-heading"><div class="eyebrow">03 — Habilidades</div><h2>Las herramientas cambian. La curiosidad permanece.</h2></div><div class="skills-wrap"><div></div><div class="skills-list"><div class="skill">Estrategia de producto <span>01</span></div><div class="skill">Investigación de usuarios <span>02</span></div><div class="skill">Diseño de servicios <span>03</span></div><div class="skill">Liderazgo de equipos <span>04</span></div><div class="skill">Métricas y crecimiento <span>05</span></div><div class="skill">Facilitación <span>06</span></div></div></div></div></section>
-		<section class="shell contact" id="contacto"><div><div class="eyebrow">04 — Contacto</div><h2>Hagamos algo<br>que importe.</h2></div><div class="contact-copy"><p>Estoy abierto a conversar sobre nuevos retos, colaboraciones y proyectos con propósito. La primera conversación corre por mi cuenta.</p><a class="email-link" href="mailto:hola@dariobravo.co">hola@dariobravo.co ↗</a></div></section>
-	</main>
-	<footer><div class="shell footer-inner"><span>© 2024 Dario Bravo</span><span>Hecho con intención · Bogotá, Colombia</span></div></footer>
-	<script>
-		const menuButton = document.querySelector('.menu-toggle');
-		const navLinks = document.querySelector('.nav-links');
-		menuButton.addEventListener('click', () => { const isOpen = navLinks.classList.toggle('is-open'); menuButton.setAttribute('aria-expanded', isOpen); });
-		navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => { navLinks.classList.remove('is-open'); menuButton.setAttribute('aria-expanded', 'false'); }));
-	</script>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header" id="inicio"><div class="container header-inner">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">DB<span>.</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="site-menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="site-menu" id="site-menu" aria-label="Navegación principal">
+      <a class="nav-link is-active" href="#inicio">Inicio</a><a class="nav-link" href="#sobre-mi">Sobre mí</a><a class="nav-link" href="#perfil">Perfil</a><a class="nav-link" href="#experiencia">Experiencia</a><a class="nav-link" href="#formacion">Formación</a><a class="nav-link" href="#habilidades">Habilidades</a><a class="nav-link" href="#contacto">Contacto</a>
+    </nav>
+    <button class="theme-toggle icon-button" type="button" aria-label="Activar modo oscuro" title="Cambiar tema"><span aria-hidden="true">◐</span></button>
+  </div></header>
+  <main id="contenido">
+    <section class="hero section-shell" aria-labelledby="hero-title"><div class="hero-copy reveal"><p class="eyebrow">Hoja de vida digital · Ecuador</p><h1 id="hero-title">Hola, soy<br><span>Dario Wladimir<br>Bravo Jimbo.</span></h1><p class="hero-subtitle">Perfil profesional | Hoja de Vida Digital</p><p class="hero-intro">Un espacio para presentar mi trayectoria, formación y capacidades profesionales de forma clara y cercana.</p><div class="hero-actions"><a class="button button-primary" href="#perfil">Ver mi perfil <span aria-hidden="true">↘</span></a><a class="button button-secondary" href="#contacto">Contactarme <span aria-hidden="true">↗</span></a><a class="text-link" href="assets/Dario-Bravo-CV.pdf" download>Descargar CV <span aria-hidden="true">↓</span></a></div></div><div class="hero-visual reveal reveal-delay" aria-label="Zona reservada para fotografía profesional"><div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div><div class="photo-placeholder"><span class="photo-icon" aria-hidden="true">+</span><strong>Tu fotografía</strong><small>Reemplazar en<br>assets/images/foto-profesional.jpg</small></div><div class="visual-tag tag-top">Disponible para oportunidades</div><div class="visual-tag tag-bottom">La Maná · EC</div></div></section>
+    <section class="section section-light" id="sobre-mi" aria-labelledby="about-title"><div class="container"><div class="section-heading"><p class="eyebrow">01 — Sobre mí</p><h2 id="about-title">Conoce los datos detrás del perfil.</h2></div><div class="info-cards"><article class="info-card"><span class="card-icon" aria-hidden="true">◉</span><div><span class="card-label">Nombre completo</span><h3>Dario Wladimir<br>Bravo Jimbo</h3></div></article><article class="info-card"><span class="card-icon" aria-hidden="true">#</span><div><span class="card-label">Edad</span><h3>32 años</h3></div></article><article class="info-card"><span class="card-icon" aria-hidden="true">⌖</span><div><span class="card-label">Ubicación</span><h3>La Maná,<br>Ecuador</h3></div></article><article class="info-card"><span class="card-icon" aria-hidden="true">☎</span><div><span class="card-label">Teléfono</span><h3><a href="tel:+593986693396">098 669 3396</a></h3></div></article></div></div></section>
+    <section class="section" id="perfil" aria-labelledby="profile-title"><div class="container split-section"><div class="section-heading"><p class="eyebrow">02 — Perfil profesional</p><h2 id="profile-title">La historia profesional está por escribirse.</h2></div><div class="placeholder-panel"><span class="panel-number">01</span><p>[Agregar aquí perfil profesional]</p><span class="panel-hint">Este texto puede reemplazarse con un resumen de tu experiencia, fortalezas y objetivos.</span></div></div></section>
+    <section class="section section-light" id="experiencia" aria-labelledby="experience-title"><div class="container"><div class="section-heading"><p class="eyebrow">03 — Experiencia laboral</p><h2 id="experience-title">Cada etapa será parte del recorrido.</h2></div><div class="empty-state"><div class="empty-icon" aria-hidden="true">＋</div><h3>Experiencia laboral pendiente de agregar</h3><p>Aquí podrás mostrar cargos, empresas, fechas, responsabilidades y logros.</p><span>[Agregar aquí experiencia laboral]</span></div></div></section>
+    <section class="section" id="formacion" aria-labelledby="education-title"><div class="container"><div class="section-heading"><p class="eyebrow">04 — Formación académica</p><h2 id="education-title">El aprendizaje también construye el camino.</h2></div><div class="education-grid"><article class="education-card"><span class="card-icon" aria-hidden="true">□</span><h3>Estudios y títulos</h3><p>[Agregar aquí estudios e instituciones]</p></article><article class="education-card"><span class="card-icon" aria-hidden="true">✦</span><h3>Cursos y certificaciones</h3><p>[Agregar aquí cursos y certificaciones]</p></article></div></div></section>
+    <section class="section section-light" id="habilidades" aria-labelledby="skills-title"><div class="container"><div class="section-heading"><p class="eyebrow">05 — Habilidades</p><h2 id="skills-title">Capacidades que podrás destacar.</h2></div><div class="skills-note"><span aria-hidden="true">i</span><p>Las habilidades se añadirán cuando proporciones la información. Los ejemplos siguientes son marcadores editables y no representan datos confirmados.</p></div><div class="skills-grid"><div class="skill-item"><div><strong>[Habilidad profesional 01]</strong><span>Ejemplo editable</span></div><div class="skill-bar"><span style="--progress:0%"></span></div></div><div class="skill-item"><div><strong>[Habilidad profesional 02]</strong><span>Ejemplo editable</span></div><div class="skill-bar"><span style="--progress:0%"></span></div></div><div class="skill-item"><div><strong>[Habilidad profesional 03]</strong><span>Ejemplo editable</span></div><div class="skill-bar"><span style="--progress:0%"></span></div></div><div class="skill-item"><div><strong>[Agregar aquí habilidades]</strong><span>Reemplazar este marcador</span></div><div class="skill-bar"><span style="--progress:0%"></span></div></div></div></div></section>
+    <section class="section contact-section" id="contacto" aria-labelledby="contact-title"><div class="container contact-layout"><div><p class="eyebrow">06 — Contacto</p><h2 id="contact-title">Hablemos de<br>lo que sigue.</h2><p class="contact-lead">Si deseas conocer más sobre mi perfil, puedes contactarme directamente.</p><a class="button whatsapp-button" href="https://wa.me/593986693396" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp <span aria-hidden="true">↗</span></a></div><form class="contact-form" id="contact-form" novalidate><div class="form-heading"><span>Escríbeme</span><span aria-hidden="true">✦</span></div><label for="name">Nombre<input id="name" name="name" type="text" autocomplete="name" required></label><label for="email">Correo electrónico<input id="email" name="email" type="email" autocomplete="email" required></label><label for="message">Mensaje<textarea id="message" name="message" rows="4" required></textarea></label><button class="button button-primary" type="submit">Enviar mensaje <span aria-hidden="true">↗</span></button><p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p></form></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><span>Dario Wladimir Bravo Jimbo</span><span>Hoja de Vida Digital · 2026</span><a href="#inicio">Volver arriba ↑</a></div></footer><button class="back-to-top icon-button" type="button" aria-label="Volver arriba" title="Volver arriba">↑</button>
 </body>
 </html>
