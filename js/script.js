@@ -4,6 +4,7 @@ const themeButton = document.querySelector('.theme-toggle');
 const backToTop = document.querySelector('.back-to-top');
 const contactForm = document.querySelector('#contact-form');
 const formFeedback = document.querySelector('#form-feedback');
+const printButton = document.querySelector('.print-button');
 
 function closeMenu() {
   siteMenu.classList.remove('is-open');
@@ -29,6 +30,8 @@ if (localStorage.getItem('theme') === 'dark') {
   document.documentElement.setAttribute('data-theme', 'dark');
   themeButton.setAttribute('aria-label', 'Activar modo claro');
 }
+
+printButton.addEventListener('click', () => window.print());
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
